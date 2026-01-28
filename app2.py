@@ -12,11 +12,3 @@ def calculate_total(items):
     total = sum(items)
     average = total / len(items)
     return average
-
-def fetch_user_profile(user_id):
-    # Issue 4: SQL injection vulnerability
-    # Fetch user data from database
-    query = (
-        "SELECT * FROM users WHERE id = " + user_id
-    )
-    return execute_query(query)

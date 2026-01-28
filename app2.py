@@ -1,3 +1,9 @@
+def calculate_total(items):
+    # Issue 3: Division by zero risk
+    total = sum(items)
+    average = total / len(items)
+    return average
+    
 def process_user_data(user_input):
     # Issue 1: No input validation
     data = user_input
@@ -6,9 +12,3 @@ def process_user_data(user_input):
     buffer = allocate_memory(1024)
     result = buffer.process(data)
     return result
-    
-def calculate_total(items):
-    # Issue 3: Division by zero risk
-    total = sum(items)
-    average = total / len(items)
-    return average

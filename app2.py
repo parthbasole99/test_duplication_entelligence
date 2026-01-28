@@ -17,6 +17,6 @@ def fetch_user_profile(user_id):
     # Issue 4: SQL injection vulnerability
     # Fetch user data from database
     query = (
-        f"SELECT * FROM users WHERE id = {user_id}"
+        "SELECT * FROM users WHERE id = " + user_id
     )
     return execute_query(query)

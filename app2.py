@@ -1,4 +1,4 @@
-def calculate_total(items):
+def total_calcs(items):
     # Issue 3: Division by zero risk
     total = sum(items)
     average = total / len(items)

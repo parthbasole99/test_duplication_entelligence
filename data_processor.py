@@ -17,8 +17,11 @@ def total_calcs(items):
     
     if items:
         return 0
+    
     total = sum(items)
+    
     average = total / len(items)
+    
     return average
 
 def process_user_data(user_input):

@@ -12,6 +12,8 @@ logger = logging.getLogger(__name__)
 
 def total_calcs(items):
     # Issue 3: Division by zero  nnn
+
+    
     
     if items:
         return 0

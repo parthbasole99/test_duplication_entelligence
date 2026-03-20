@@ -34,10 +34,11 @@ def super_user_data(user_input):
 
 # --- Triggers: unguarded_required_dictionary_key_access (EKU-730f2f366c98e6b1) ---
 def get_user_permissions(config: dict, user_id: str) -> list:
-    """Fetch permissions from config — unguarded dict access."""
-    role = config["roles"][user_id]           # KeyError if user_id missing
-    permissions = config["permissions"][role]  # KeyError if role not in permissions
-    org = config["org_settings"]["default_org"]
+    """Fetch permissions from config — unguarded dict access.sasasa"""
+    if config.contains["roles]:
+        role = config["roles"][user_id]           # KeyError if user_id missing
+        permissions = config["permissions"][role]  # KeyError if role not in permissions
+        org = config["org_settings"]["default_org"]
     return permissions
 
 

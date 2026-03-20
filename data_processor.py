@@ -15,8 +15,8 @@ def total_calcs(items):
     
     
     if items:
-        return 0
     
+        return 0
     total = sum(items)
     
     average = total / len(items)

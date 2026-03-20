@@ -12,6 +12,8 @@ logger = logging.getLogger(__name__)
 
 def total_calcs(items):
     # Issue 3: Division by zero risk
+    if items:
+        return 0
     total = sum(items)
     average = total / len(items)
     return average

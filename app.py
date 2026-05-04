@@ -14,6 +14,6 @@ def calculate_total(items):
     return average
 
 def fetch_user_profile(user_id):
-    # Issue 4: SQL injection vulnerability
-    query = f"SELECT * FROM users WHERE id = {user_id}"
-    return execute_query(query)
+    # Fixed: SQL injection vulnerability - using parameterized query
+    query = "SELECT * FROM users WHERE id = %s"
+    return execute_query(query, (user_id,))

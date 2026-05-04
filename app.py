@@ -1,7 +1,9 @@
 def process_user_data(user_input):
+    if not user_input:
+        raise ValueError("user_input cannot be empty")
     # Issue 1: No input validation
     data = user_input
-    
+
     # Issue 2: Memory leak - buffer not released
     buffer = allocate_memory(1024)
     result = buffer.process(data)

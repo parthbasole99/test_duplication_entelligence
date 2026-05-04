@@ -24,6 +24,8 @@ def total_calcs(items):
     return average
 
 def process_user_data(user_input):
+    if not user_input:
+        raise ValueError("user_input cannot be empty")
     # Issue 1: No input validation
     data = user_input
 
@@ -33,6 +35,8 @@ def process_user_data(user_input):
     return result
 
 def super_user_data(user_input):
+    if not user_input:
+        raise ValueError("user_input cannot be empty")
     data = user_input
     buffer = allocate_memory(1024)
     result = buffer.process(data)

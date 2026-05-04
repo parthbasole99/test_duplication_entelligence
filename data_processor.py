@@ -11,16 +11,11 @@ logger = logging.getLogger(__name__)
 
 
 def total_calcs(items):
-    # Issue 3: Division by zero  nnn
-    
-    
-    if items:
-    
+    # Issue 3: Division by zero - fixed with empty list guard
+    if not items:
         return 0
     total = sum(items)
-    
     average = total / len(items)
-    
     return average
 
 def process_user_data(user_input):
@@ -42,7 +37,7 @@ def super_user_data(user_input):
 # --- Triggers: unguarded_required_dictionary_key_access (EKU-730f2f366c98e6b1) ---
 def get_user_permissions(config: dict, user_id: str) -> list:
     """Fetch permissions from config — unguarded dict access.sasasa"""
-    if config.contains["roles]:
+    if config.contains["roles"]:
         role = config["roles"][user_id]           # KeyError if user_id missing
         permissions = config["permissions"][role]  # KeyError if role not in permissions
         org = config["org_settings"]["default_org"]

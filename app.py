@@ -8,7 +8,9 @@ def process_user_data(user_input):
     return result
     
 def calculate_total(items):
-    # Issue 3: Division by zero risk
+    # Issue 3: Division by zero risk - fixed with empty list guard
+    if not items:
+        return 0
     total = sum(items)
     average = total / len(items)
     return average
